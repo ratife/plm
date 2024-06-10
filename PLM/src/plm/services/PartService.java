@@ -193,8 +193,7 @@ public class PartService implements ServiceLifeCycle,ServiceReservation,ServiceV
 
 		Part nextPartVersion = new Part(part.getReference(), part.getVersionSchema().getNextVersionLabel(version), 1);
 		
-		nextPartVersion.setReserved(false);
-		nextPartVersion.setReservedBy(null);
+		nextPartVersion.free();
 		
 		nextPartVersion.setLifeCycleTemplate(part.getLifeCycleTemplate());
 		nextPartVersion.setLifeCycleState(part.getLifeCycleTemplate().getInitialState());
@@ -202,14 +201,14 @@ public class PartService implements ServiceLifeCycle,ServiceReservation,ServiceV
 		nextPartVersion.setVersionSchema(part.getVersionSchema());
 		nextPartVersion.setPartAttribute1(part.getPartAttribute1());
 		nextPartVersion.setPartAttribute2(part.getPartAttribute2());
+		nextPartVersion.setChildren(part.getChildren());
 		
 		partDao.create(nextPartVersion);
 
 		part.getDocument().forEach(document->{
 			Document nextDocumentVersion = new Document(document.getId().getReference(), document.getVersionSchema().getNextVersionLabel(version), 1);
     		
-    		nextDocumentVersion.setReserved(false);
-    		nextDocumentVersion.setReservedBy(null);
+    		nextDocumentVersion.free();
     		
     		nextDocumentVersion.setLifeCycleTemplate(document.getLifeCycleTemplate());
     		nextDocumentVersion.setLifeCycleState(document.getLifeCycleTemplate().getInitialState());
@@ -218,6 +217,8 @@ public class PartService implements ServiceLifeCycle,ServiceReservation,ServiceV
     		
     		nextDocumentVersion.setDocumentAttribute1(document.getDocumentAttribute1());
     		nextDocumentVersion.setDocumentAttribute2(document.getDocumentAttribute2());
+    		
+    		nextDocumentVersion.setPart(nextPartVersion);
     		
     		documentDao.create(nextDocumentVersion);
 		});	
