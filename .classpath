@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="PLM/src"/>
+	<classpathentry kind="lib" path="PLM/lib/hibernate-commons-annotations-5.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/hibernate-core-5.3.7.Final.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/hibernate-jpa-2.1-api-1.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/slf4j-api-1.7.28.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-beans-5.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-boot-2.1.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-boot-autoconfigure-2.1.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-context-5.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-core-5.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-security-web-5.1.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-tx-5.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-web-5.1.7.RELEASE.jar"/>
+	<classpathentry kind="lib" path="PLM/lib/spring-webmvc-5.1.7.RELEASE.jar"/>
+	<classpathentry kind="output" path="PLM/bin"/>
+</classpath>
